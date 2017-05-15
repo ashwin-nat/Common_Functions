@@ -1,7 +1,8 @@
-//revised on 30/03/2017
-//basic data structure: linked list and stack, bubble sort on linked list
+//revised on 15 May 2017
+//basic data structures: linked list and stack operations, bubble sort on linked list
 //hex and ascii conversions
-//to implement: insert and delete from any list position
+//random number and random prime generation
+//simple reversal (reduction) functions for rainbow tables
 
 
 /*basic struct, modify as needed */
