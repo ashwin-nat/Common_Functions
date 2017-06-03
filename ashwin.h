@@ -213,7 +213,23 @@ void sortList (struct test *head, int mode)
         {
             for(temp=head,j=0;j<len-i-1;j++,temp = temp->next)
             {
-                ifint map1(int x)
+                if(mode == 0)
+                {
+                    if (temp->value > temp->next->value)
+                    swapNodeValues(&temp,&temp->next);
+                }
+                else
+                {
+                    if (temp->value < temp->next->value)
+                    swapNodeValues(&temp,&temp->next);
+                }
+            }
+            
+        }
+      }
+}
+
+int map1(int x)
 {
     int temp = x % 62;
     int result;
