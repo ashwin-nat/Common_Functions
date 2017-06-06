@@ -375,7 +375,9 @@ int isPrime (int n)
 {
     int i;
     int flag = 0;
-    for(i=2;i<n/2;i++)
+    if(n%2 == 0)
+	return 0;
+    for(i=3;i<n/2;i+=2)
     {
         if(n%i == 0)
         {
@@ -388,7 +390,6 @@ int isPrime (int n)
     else
         return 0;
 }
-
 /*Generates a random prime number in the specified range*/
 int randPrimeInRange(int min, int max)
 {
