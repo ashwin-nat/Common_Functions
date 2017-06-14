@@ -370,6 +370,20 @@ int randInRange(int min, int max)
     return min + rand() % (max+1 - min);
 }
 
+int randInRangeWithoutBias(int a, int b)
+{
+    int x;
+    int diff = b-a;
+    do
+    {
+        x = rand();
+    }while(x >= (RAND_MAX - RAND_MAX % diff));
+
+    x %= diff;
+    x += diff;
+    return x;
+}
+
 /*Checks if a number is prime*/
 int isPrime (int n)
 {
@@ -412,6 +426,25 @@ int randPrimeInRange(int min, int max)
         return random;
     else
         return 0;
+}
+
+int randPrimeInRangeWithoutBias(int a, int b)
+{
+    int x;
+    int diff = b-a;
+    while(1)
+    {
+        do
+        {
+            x = rand();
+        }while(x >= (RAND_MAX - RAND_MAX % diff));
+
+        x %= diff;
+        x += diff;
+        if(isPrime(x) == 1)
+            break;
+    }
+    return x;
 }
 
 /*Rev1 - a simple reversal (reduction) function for rainbow tables. It maps takes modulo 62 of a hex number (hash) and maps it to
