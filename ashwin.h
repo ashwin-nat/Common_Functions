@@ -380,7 +380,7 @@ int randInRangeWithoutBias(int a, int b)
     }while(x >= (RAND_MAX - RAND_MAX % diff));
 
     x %= diff;
-    x += diff;
+    x += a;
     return x;
 }
 
