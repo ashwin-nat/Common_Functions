@@ -534,3 +534,12 @@ int map2(int x)
         result = 122 - temp;
     return result;
 }
+
+//function and macro to perform array operation without passing the size parameter. only call the macro.
+void dispArray(int array[], int size)
+{
+    for(int i=0; i<size; i++)
+        printf("%d  ",array[i]);
+    printf("\n");
+}
+#define DISP(a) (dispArray(a,sizeof(a)/sizeof(int)))
